@@ -1,0 +1,19 @@
+proxy:
+  port: 8080
+  hide-navbar: true
+  authentication: none
+  landing-page: /app/iohanalyzer
+  docker:
+      internal-networking: true
+  specs:
+  - id: iohanalyzer
+    display-name: IOHanalyzer
+    description: Application IOHanalyzer
+    container-cmd: ["R", "-e", "IOHanalyzer::runServer(port = 3838)"]
+    container-image: iohanalyzer 
+    container-network: ioh-net
+
+logging:
+  container-log-path: ./container-logs
+  file:
+    shinyproxy.log
