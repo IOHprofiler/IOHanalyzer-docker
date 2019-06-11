@@ -11,17 +11,34 @@ The only requirement is a working docker system. Please consult the docker offic
 ## How to deploy IOHanalyzer over the server
 
 1. On the server you would like to deploy IOHanalyzer, please download or clone this repository:
-``git clone git@github.com:IOHprofiler/IOHanalyzer-docker.git``
 
-2. `cd IOHanalyzer-docker`
+```bash
+git clone git@github.com:IOHprofiler/IOHanalyzer-docker.git
+```
+
+2. enter the folder
+
+```bash
+cd IOHanalyzer-docker
+```
+
 3. Create a docker network that ShinyProxy will use to communicate with the Shiny containers.
-``sudo docker network create ioh-net``
+
+```bash
+sudo docker network create ioh-net
+```
 
 4. Run the following command to build the ShinyProxy image:
-``sudo docker build . -t iohanalyzer``
+
+```bash
+sudo docker build . -t iohanalyzer
+```
 
 5. Run the following command to launch the ShinyProxy container:
-``sudo docker run -d -v /var/run/docker.sock:/var/run/docker.sock --net ioh-net -p 80:8080 iohanalyzer``
+
+```bash
+sudo docker run -d -v /var/run/docker.sock:/var/run/docker.sock --net ioh-net -p 80:8080 iohanalyzer
+```
 
 ## Notes on the configuration
 
