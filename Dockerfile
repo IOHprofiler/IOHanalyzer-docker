@@ -30,7 +30,7 @@ RUN wget https://www.shinyproxy.io/downloads/shinyproxy-2.2.1.jar -O /opt/shinyp
 # install R package dependencies
 RUN R -e "install.packages(c('Rcpp', 'magrittr', 'dplyr', 'data.table', 'ggplot2', 'plotly', 'colorspace', 'colorRamps', 'RColorBrewer', 'shiny', 'withr', 'shinydashboard', 'markdown', 'reshape2', 'shinyjs', 'colourpicker'), repos='https://cloud.r-project.org/')"
 RUN R -e "install.packages('remotes', dependencies = T, repos='http://cran.rstudio.com/')"
-# RUN R -e "devtools::install_github('nik01010/dashboardthemes')"
+RUN R -e "remotes::install_github('nik01010/dashboardthemes')"
 RUN R -e "remotes::install_github('IOHprofiler/IOHanalyzer', dependencies = T, force = T)"
 
 # install google chrome
