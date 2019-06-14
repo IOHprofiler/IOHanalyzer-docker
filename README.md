@@ -1,4 +1,4 @@
-# Containerized IOHanalyzer hosted through ShinyProxy
+# Deploy IOHanalyzer through ShinyProxy and docker
 
 This example is similar to the example 'standalone ShinyProxy with a docker engine', with one exception:
 ShinyProxy runs in a container itself, in the same container manager (i.e. docker engine) that also hosts
@@ -42,5 +42,5 @@ sudo docker run -d -v /var/run/docker.sock:/var/run/docker.sock --net ioh-net -p
 
 ## Notes on the configuration
 
-* ShinyProxy will listen for HTTP traffic on port `80`.
+* ShinyProxy will listen for HTTP traffic on port `8080` while it will be rediect to `80` by the container.
 * The custom bridge network `ioh-net` is needed to allow the containers to access each other using the container ID as hostname.
