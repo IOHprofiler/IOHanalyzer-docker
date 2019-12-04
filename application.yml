@@ -9,7 +9,7 @@ proxy:
   - id: iohanalyzer
     display-name: IOHanalyzer
     description: Application IOHanalyzer
-    container-cmd: ["R", "-e", "IOHanalyzer::runServer(port = 3838)"]
+    container-cmd: ["R", "-e", "IOHanalyzer::runServer(port = 3838)", ">>/opt/shinyproxy/log", "2>&1", "&"]
     container-image: iohanalyzer 
     container-network: ioh-net
 
