@@ -13,7 +13,6 @@ RUN apt-get update && apt-get install -y \
     libcairo2-dev \
     libxt-dev \
     libssl-dev \
-    inkscape \ 
     nodejs \
     npm \
     xvfb \
