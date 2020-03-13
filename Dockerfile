@@ -14,13 +14,12 @@ RUN apt-get update && apt-get install -y \
     libxt-dev \
     libssl-dev \
     nodejs \
-    npm \
     xvfb \
     libxtst6 \
     libxss1 \
-    libgconf2-4 \
     libgtk2.0-0 \
-    libxml2-dev 
+    libxml2-dev \
+    gconf-gsettings-backend
 
 # install shinyProxy
 RUN mkdir -p /opt/shinyproxy/
